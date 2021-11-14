@@ -1,0 +1,28 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: antiquewhite;
+    text-align: center;
+    margin: 20px;
+    margin-top: 200px;
+    background-color: tomato;
+}
+
+.clock {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 100px 100px;
+    color: white;
+    border: 2px solid white;
+    background-color: black;
+    border-radius: 30px;
+}
+
+.clock div {
+    border-left: 1px solid white;
+    font-size: 80px;
+}

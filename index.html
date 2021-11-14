@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="clock.css">
+    <title>ComeDownCLock</title>
+</head>
+
+<body>
+    <div class="clock">
+
+        <div id="MyClock1">..</div>
+        <div id="MyClock2">..</div>
+        <div id="MyClock3">..</div>
+        <div id="MyClock4">..</div>
+        <div class="MyClock">Days</div>
+        <div class="MyClock">Hours</div>
+        <div class="MyClock">Min.</div>
+        <div class="MyClock">Sec.</div>
+
+    </div>
+
+</body>
+
+<script>
+    var countDownDate = new Date("Dec 31, 2021 24:0:0").getTime();
+
+    var x = setInterval(function() {
+
+
+        var now = new Date().getTime();
+        var Distance = countDownDate - now;
+        var Days = Math.floor(Distance / (1000 * 60 * 60 * 24));
+        var Hours = Math.floor((Distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var Minutes = Math.floor((Distance % (1000 * 60 * 60)) / (1000 * 60));
+        var Seconds = Math.floor((Distance % (1000 * 60)) / 1000);
+        document.getElementById("MyClock1").innerHTML = Days;
+        document.getElementById("MyClock2").innerHTML = Hours;
+        document.getElementById("MyClock3").innerHTML = Minutes;
+        document.getElementById("MyClock4").innerHTML = Seconds;
+
+        if (Distance < 0) {
+            clearInterval(x);
+            document.getElementById("MyClock").innerHTML = "EXPIRED";
+        }
+    }, 1000);
+</script>
+
+</html>
